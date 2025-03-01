@@ -20,11 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserProfileController {
     UserProfileService userProfileService;
 
-    @PostMapping("/users")
-    UserProfileResponse createProfile(@RequestBody ProfileCreationRequest request) {
-        return userProfileService.createProfile(request);
-    }
-
     @GetMapping("/users/{profileId}")
     UserProfileResponse getProfile(@PathVariable String profileId) {
         return userProfileService.getProfile(profileId);
